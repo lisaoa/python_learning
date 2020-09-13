@@ -23,10 +23,11 @@ def fillUnivList(html,ulist):
 
 
 def printUnivList(ulist,num):
-    print("{:^10}\t{:^6}\t{:^10}".format("排名","学校名称","省市"))
+    tplt = "{0:^10}\t{1:{3}^10}\t{2:^10}"
+    print(tplt.format("排名","学校名称","省市",chr(12288)))  #利用中文空格进行填充，而不是英文空格
     for i in range(num):
         u=ulist[i]
-        print("{:^10}\t{:^6}\t{:^10}".format(u[0],u[1],u[2]))
+        print(tplt.format(u[0],u[1],u[2],chr(12288)))
 
 if __name__ == "__main__":
     ulist = []
